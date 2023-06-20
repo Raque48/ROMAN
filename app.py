@@ -9,21 +9,6 @@ from dash.dependencies import Input, Output, State
 import cufflinks as cf
 
 # Initialize app
-
-
-
-# Ruta al archivo CSV descargado
-#archivo_csv = 'https://drive.google.com/drive/u/0/folders/1L3AzThW52HWSQ4GYpOngSNqjmFAuNAJa '
-
-# Cargar el archivo CSV en un DataFrame de pandas
-#df = pd.read_csv(archivo_csv)
-
-# Realizar operaciones con el DataFrame cargado
-# ...
-
-# Ejemplo: Imprimir las primeras filas del DataFrame
-#print(df.head())
-
 app = dash.Dash(
     __name__,
     meta_tags=[
@@ -34,7 +19,6 @@ app.title = "US Opioid Epidemic"
 server = app.server
 
 # Load data
-
 APP_PATH = str(pathlib.Path(__file__).parent.resolve())
 
 df_lat_lon = pd.read_csv(
@@ -100,7 +84,6 @@ mapbox_access_token = "pk.eyJ1IjoiZW5yaXF1ZS0wMSIsImEiOiJjbGhyNDkwZjAwYjBpM2Vtd3
 mapbox_style = "mapbox://styles/plotlymapbox/cjvprkf3t1kns1cqjxuxmwixz"
 
 # App layout
-
 app.layout = html.Div(
     id="root",
     children=[
